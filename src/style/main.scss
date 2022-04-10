@@ -1,0 +1,93 @@
+@import "./color.scss";
+
+*{-webkit-tap-highlight-color: rgba(0,0,0,0)} //去除ios点击样式 烦死了
+
+.smart-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABAQMAAADHB02zAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAZQTFRF8PDw8vLyvd5RnQAAAApJREFUeJxjkAEAAB4AHeawS1YAAAAASUVORK5CYII=");
+}
+.flex-center{
+  @apply flex justify-center items-center;
+}
+.smart-bg-full{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABAQMAAADHB02zAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAZQTFRF8PDw8vLyvd5RnQAAAApJREFUeJxjkAEAAB4AHeawS1YAAAAASUVORK5CYII=");
+}
+
+.smart-bg-two-full{
+  @apply relative;
+  width: 100%;
+  &::after{
+    @apply fixed;
+    content: "";
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://static.smartisanos.cn/mobile/assets/images/bg-layout@2x.5611bddf255be8472b81b7a740665a5d.png');
+  }
+}
+
+.smart-bg-blue{
+  background: $blue;
+  /* background: linear-gradient(#6f94e8,#5178df); */
+}
+.smart-bg-red{
+  /* #d84747 */
+  background: $red;
+  /* background: linear-gradient(#e87067,#df5249); */
+  /* background: #d0453d; */
+  /* background: linear-gradient(#db6962,#d0453d); */
+}
+.smart-bg-yello{
+  background: $yello;
+  /* background: linear-gradient(#fada59,#ffd633); */
+}
+.smart-bg-green{
+  background: $green;
+  /* background: linear-gradient(#8eaf41,#8aad37); */
+}
+.smart-bg-white{
+  /* background: #f5f5f5; */
+  @apply text-black text-opacity-60;
+  background: $white;
+  
+  /* background: linear-gradient(#ffffff,#f8f8f8); */
+}
+.smart-bg-green-light{
+  background: rgba(138,173,55,.5)
+}
+
+.border-solid-t-05,.border-solid-b-05{
+  position: relative;
+}
+.border-solid-t-05::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    background: #ebebeb;
+    transform: scaleY(.6);
+    transform-origin: 0 0;
+}
+.border-solid-b-05::before{
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.6px;
+  background: #ebebeb;
+  transform: scaleY(.6);
+  transform-origin: 0 0;
+  z-index: 10;
+}
+
+a:focus, input:focus, button:focus, textarea:focus {
+  outline: none;
+}
