@@ -1,9 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-// import '@/style/tailwind.css'
-// import '@/style/main.scss'
 import router from '@/router/index'
-import vconsole from 'vconsole'
+// import Smartisan from '@/packages/index'
 import Smartisan from '../dist/smartisan-ui.es.js'
 import '../dist/style.css'
 document.body.addEventListener('touchstart', function () { });
