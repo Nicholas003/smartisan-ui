@@ -2,6 +2,17 @@
 
 ## smartisan-ui
 
+
+```
+yarn add smartisan-ui
+
+import SmartisanUI from 'smartisan-ui'
+import 'smartisan-ui/dist/style.css'
+
+createApp(App).use(SmartisanUI).use(router).mount('#app')
+
+```
+
 [http://smartisan-ui.gitee.io/vue/](http://smartisan-ui.gitee.io/vue/)
 
 ###感谢 
