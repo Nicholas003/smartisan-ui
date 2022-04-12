@@ -2,6 +2,8 @@
 
 ## smartisan-ui
 
+[gitee](https://gitee.com/smartisan-ui/vue)
+[github](https://github.com/Nicholas003/smartisan-ui/)
 
 ```
 yarn add smartisan-ui
