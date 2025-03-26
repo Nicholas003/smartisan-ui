@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw,createWebHashHistory } from "vue-router";
 
 
 let views = import.meta.glob('../views/**/*.vue')
@@ -14,7 +14,7 @@ Object.entries(views).forEach(([name,module])=>{
 })
 
 let router = createRouter({
-  history:createWebHistory(),
+  history:createWebHashHistory(),
   routes:[
     {
       path:'/',
