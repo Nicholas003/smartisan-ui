@@ -4,35 +4,35 @@
 name: Node.js CI
 
 on:
-push:
-branches: [ "main" ]
-pull_request:
-branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 permissions:
-contents: write
+  contents: write
 
 jobs:
-build:
+  build:
 
-runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-strategy:
-matrix:
-node-version: [18.x]
-# See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-steps:
-- uses: actions/checkout@v4
-- name: Use Node.js ${{ matrix.node-version }}
-uses: actions/setup-node@v4
-with:
-node-version: ${{ matrix.node-version }}
-cache: 'npm'
-- run: yarn
-- run: yarn build
-- name: Deploy 🚀
-uses: JamesIves/github-pages-deploy-action@v4
-with:
-BRANCH: gh-pages # The branch the action should deploy to.
-FOLDER: dist # The folder the action should deploy.
-CLEAN: true # Automatically remove deleted files from the deploy branch
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: yarn
+    - run: yarn build
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: dist # The folder the action should deploy.
+        CLEAN: true # Automatically remove deleted files from the deploy branch
